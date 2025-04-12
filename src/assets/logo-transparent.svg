@@ -1,27 +1,13 @@
-export default function Header() {
-  return (
-    <header>
-      <div className='-ml-2 flex'>
-        <svg
-          width='100pt'
-          height='100pt'
-          viewBox='160 160 700 700'
-          preserveAspectRatio='xMidYMid meet'
-          className='group cursor-pointer'
-        >
-          <circle
-            cx='512'
-            cy='512'
-            r='280'
-            className='fill-red-400 group-hover:fill-amber-50'
-          />
-          <g
-            transform='translate(0.000000,1024.000000) scale(0.100000,-0.100000)'
-            fill='#000'
-            stroke='none'
-          >
-            <path
-              d='M4880 8044 c-278 -24 -511 -71 -750 -152 -161 -55 -204 -73 -364
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1024.000000pt" height="1024.000000pt" viewBox="0 0 1024.000000 1024.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M4880 8044 c-278 -24 -511 -71 -750 -152 -161 -55 -204 -73 -364
 -154 -396 -198 -783 -528 -1042 -888 -581 -807 -705 -1898 -320 -2814 144
 -342 334 -631 585 -890 569 -585 1317 -895 2162 -896 787 0 1485 289 2050 850
 271 269 441 516 605 873 281 613 327 1379 124 2028 -216 689 -669 1272 -1262
@@ -41,15 +27,6 @@ export default function Header() {
 142 -87 93 -123 189 -123 327 0 104 27 188 88 278 97 143 270 232 453 233 77
 0 200 -33 275 -74 l63 -35 5 27 c3 15 20 135 36 267 17 132 51 391 75 575 24
 184 58 445 75 580 17 135 35 261 41 282 l9 36 88 -47 c48 -27 128 -74 177
--106z'
-            />
-          </g>
-        </svg>
-
-        <p className='font-karla mt-10 -ml-1.5 cursor-pointer text-5xl font-normal text-amber-50'>
-          -player
-        </p>
-      </div>
-    </header>
-  );
-}
+-106z"/>
+</g>
+</svg>

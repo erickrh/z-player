@@ -29,9 +29,9 @@ export default function GenresSection() {
         </div>
       ) : (
         <section>
-          <h2 className='font-karla mt-5 text-3xl font-normal'>Genres</h2>
+          <h2 className='font-karla mt-1 text-3xl font-normal'>Genres</h2>
 
-          <section className='mt-5 flex flex-wrap justify-center gap-5'>
+          <section className='mt-4 flex flex-wrap justify-center gap-5'>
             {genres.map((genre) => (
               <GenreCard
                 key={genre.name}
