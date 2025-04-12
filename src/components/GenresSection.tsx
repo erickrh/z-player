@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import GenreCard, { GenreCardProps } from './GenreCard';
+import BigCard, { BigCardProps } from './BigCard';
 import { supabase } from '../supabase';
 
 export default function GenresSection() {
-  const [genres, setGenres] = useState<GenreCardProps[]>([]);
+  const [genres, setGenres] = useState<BigCardProps[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,11 +33,7 @@ export default function GenresSection() {
 
           <section className='mt-4 flex flex-wrap justify-center gap-5'>
             {genres.map((genre) => (
-              <GenreCard
-                key={genre.name}
-                name={genre.name}
-                cover={genre.cover}
-              />
+              <BigCard key={genre.name} name={genre.name} cover={genre.cover} />
             ))}
           </section>
         </section>
