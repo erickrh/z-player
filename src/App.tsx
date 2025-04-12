@@ -1,15 +1,15 @@
-import './App.css';
-import Header from './components/Header';
-import GenresSection from './components/GenresSection';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
-    <div className='container mx-auto mb-5 px-10'>
-      <Header />
-      <GenresSection />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+
+        <Route path='/helloworld' element={<h1>Hello world</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
