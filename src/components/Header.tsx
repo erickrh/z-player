@@ -1,10 +1,10 @@
 export default function Header() {
   return (
     <header>
-      <div className='-ml-2 flex'>
+      <div className='mt-5 -ml-2 flex items-center'>
         <svg
-          width='100pt'
-          height='100pt'
+          width='80pt'
+          height='80pt'
           viewBox='160 160 700 700'
           preserveAspectRatio='xMidYMid meet'
           className='group cursor-pointer'
@@ -46,7 +46,7 @@ export default function Header() {
           </g>
         </svg>
 
-        <p className='font-karla mt-10 -ml-1.5 cursor-pointer text-5xl font-normal text-amber-50'>
+        <p className='font-karla -ml-1.5 cursor-pointer text-5xl font-normal text-amber-50'>
           -player
         </p>
       </div>
