@@ -1,18 +1,47 @@
+import { useEffect, useState } from 'react';
 import GenreCard, { GenreCardProps } from './GenreCard';
-import genresData from '../data/genres.json';
-
-const genresList: GenreCardProps[] = genresData.genres;
+import { supabase } from '../supabase';
 
 export default function GenresSection() {
-  return (
-    <section>
-      <h2 className='font-karla mt-5 text-3xl font-normal'>Genres</h2>
+  const [genres, setGenres] = useState<GenreCardProps[]>([]);
+  const [loading, setLoading] = useState(true);
 
-      <section className='mt-5 flex flex-wrap justify-center gap-5'>
-        {genresList.map((genre) => (
-          <GenreCard key={genre.name} name={genre.name} image={genre.image} />
-        ))}
-      </section>
-    </section>
+  useEffect(() => {
+    const fetchGenres = async () => {
+      try {
+        const { data, error } = await supabase.from('genres').select('*');
+        if (error) console.error('Supabase error:', error.message);
+        else setGenres(data);
+      } catch (err) {
+        console.error('Error fetching genres:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchGenres();
+  }, []);
+
+  return (
+    <>
+      {loading ? (
+        <div className='flex h-screen items-center justify-center'>
+          <div className='h-10 w-10 animate-spin rounded-full border-t-2 border-b-2 border-white' />
+        </div>
+      ) : (
+        <section>
+          <h2 className='font-karla mt-5 text-3xl font-normal'>Genres</h2>
+
+          <section className='mt-5 flex flex-wrap justify-center gap-5'>
+            {genres.map((genre) => (
+              <GenreCard
+                key={genre.name}
+                name={genre.name}
+                cover={genre.cover}
+              />
+            ))}
+          </section>
+        </section>
+      )}
+    </>
   );
 }
