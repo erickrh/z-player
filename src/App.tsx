@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import Genre from './components/Genre';
+import GenreDynamic from './components/GenreDynamic';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
 
-        <Route path='/genre' element={<Genre />} />
+        <Route path='/genre' element={<GenreDynamic />} />
 
         <Route path='/helloworld' element={<h1>Hello world</h1>} />
       </Routes>
