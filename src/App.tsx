@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import Albums from './components/Albums';
+import Genre from './components/Genre';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
 
-        <Route path='/albums' element={<Albums />} />
+        <Route path='/genre' element={<Genre />} />
 
         <Route path='/helloworld' element={<h1>Hello world</h1>} />
       </Routes>
