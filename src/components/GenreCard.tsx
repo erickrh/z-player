@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
-export interface BigCardProps {
+export interface GenreCardProps {
   name: string;
   cover: string;
   id: number;
 }
 
-export default function BigCard({ name, cover, id }: BigCardProps) {
+export default function GenreCard({ name, cover, id }: GenreCardProps) {
   return (
     <Link to={`/genre/${id}`}>
       <article className='group relative h-48 w-96 cursor-pointer rounded-sm shadow outline transition-all duration-200 hover:-translate-y-1 hover:outline-2 hover:outline-red-400'>
