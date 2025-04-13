@@ -2,7 +2,7 @@ import AlbumCard from '../components/AlbumCard';
 import Arrow from '../assets/arrow.svg?react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { supabase } from '../supabase';
+import { supabase } from '@/supabase';
 
 interface albums {
   cover: string;
@@ -65,7 +65,11 @@ export default function GenreDynamic() {
         {albums && (
           <div className='mt-10 flex flex-wrap gap-x-5 gap-y-15'>
             {albums.map((album) => (
-              <AlbumCard cover={album.cover} name={album.title} />
+              <AlbumCard
+                key={album.id}
+                cover={album.cover}
+                name={album.title}
+              />
             ))}
           </div>
         )}
