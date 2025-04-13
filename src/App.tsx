@@ -8,7 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/genre/:genreId' element={<GenreDynamic />} />
-        <Route path='/genre/:id/:albumId' element={<p>Hello</p>} />
+        <Route path='/genre/:genreId/:albumId' element={<p>Hello</p>} />
         <Route path='/helloworld' element={<h1>Hello world</h1>} />
       </Routes>
     </BrowserRouter>
