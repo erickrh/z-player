@@ -77,7 +77,7 @@ export default function GenreDynamic() {
         )}
       </article>
 
-      <Link to='/' className='fixed inset-y-0 left-0 flex items-center'>
+      <Link to='/' className='fixed top-1/2 left-0 -translate-y-1/2'>
         <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
       </Link>
     </section>
