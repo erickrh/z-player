@@ -13,7 +13,7 @@ interface albums {
 }
 
 export default function GenreDynamic() {
-  const { id } = useParams();
+  const { genreId } = useParams();
   const [headerImage, setHeader] = useState<string>();
   const [albums, setAlbums] = useState<albums[]>();
 
@@ -21,8 +21,8 @@ export default function GenreDynamic() {
     const fetchData = async () => {
       try {
         const [headerResult, albumsResult] = await Promise.all([
-          supabase.from('genres').select('header').eq('id', id).single(),
-          supabase.from('albums').select('*').eq('genre', id),
+          supabase.from('genres').select('header').eq('id', genreId).single(),
+          supabase.from('albums').select('*').eq('genre', genreId),
         ]);
 
         if (headerResult.error) {
@@ -42,7 +42,7 @@ export default function GenreDynamic() {
     };
 
     fetchData();
-  }, [id]);
+  }, [genreId]);
 
   return (
     <section>
@@ -69,6 +69,8 @@ export default function GenreDynamic() {
                 key={album.id}
                 cover={album.cover}
                 name={album.title}
+                genreId={genreId!}
+                albumId={album.id}
               />
             ))}
           </div>
