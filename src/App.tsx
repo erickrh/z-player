@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GenreDynamic from './components/GenreDynamic';
+import GenreDynamic from './pages/GenreDynamic';
 import HomePage from './pages/HomePage';
 
 function App() {
@@ -7,9 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage />} />
-
-        <Route path='/genre' element={<GenreDynamic />} />
-
+        <Route path='/genre/:id' element={<GenreDynamic />} />
         <Route path='/helloworld' element={<h1>Hello world</h1>} />
       </Routes>
     </BrowserRouter>

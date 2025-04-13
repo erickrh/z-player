@@ -33,7 +33,12 @@ export default function GenresSection() {
 
           <section className='mt-4 flex flex-wrap justify-center gap-5'>
             {genres.map((genre) => (
-              <BigCard key={genre.name} name={genre.name} cover={genre.cover} />
+              <BigCard
+                key={genre.id}
+                name={genre.name}
+                cover={genre.cover}
+                id={genre.id}
+              />
             ))}
           </section>
         </section>
