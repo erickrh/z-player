@@ -77,11 +77,9 @@ export default function GenreDynamic() {
         )}
       </article>
 
-      <div className='fixed inset-y-0 left-0 flex items-center'>
-        <Link to='/'>
-          <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
-        </Link>
-      </div>
+      <Link to='/' className='fixed inset-y-0 left-0 flex items-center'>
+        <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
+      </Link>
     </section>
   );
 }
