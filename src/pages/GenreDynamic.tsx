@@ -3,6 +3,7 @@ import Arrow from '../assets/arrow.svg?react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase';
+import genresData from '@/data/genresData.json';
 
 interface albums {
   cover: string;
@@ -14,27 +15,20 @@ interface albums {
 
 export default function GenreDynamic() {
   const { genreId } = useParams();
-  const [headerImage, setHeader] = useState<string>();
   const [albums, setAlbums] = useState<albums[]>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [headerResult, albumsResult] = await Promise.all([
-          supabase.from('genres').select('header').eq('id', genreId).single(),
-          supabase.from('albums').select('*').eq('genre', genreId),
-        ]);
+        const { data: albumsResult, error } = await supabase
+          .from('albums')
+          .select('*')
+          .eq('genre', genreId);
 
-        if (headerResult.error) {
-          console.error('Error fetching header:', headerResult.error.message);
+        if (error) {
+          console.error('Error fetching albums:', error.message);
         } else {
-          setHeader(headerResult.data?.header);
-        }
-
-        if (albumsResult.error) {
-          console.error('Error fetching albums:', albumsResult.error.message);
-        } else {
-          setAlbums(albumsResult.data);
+          setAlbums(albumsResult);
         }
       } catch (err) {
         console.error('Unexpected error:', err);
@@ -43,6 +37,10 @@ export default function GenreDynamic() {
 
     fetchData();
   }, [genreId]);
+
+  const headerImage = genresData.find(
+    (genre) => genreId === genre.id.toString()
+  )?.header;
 
   return (
     <section>
