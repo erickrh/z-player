@@ -5,17 +5,19 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase';
 import genresData from '@/data/genresData.json';
 
-interface albums {
+interface Albums {
   cover: string;
-  created_at: string;
+  created_at: Date;
   genre: number;
   id: number;
   title: string;
+  artist: string;
+  year: number;
 }
 
 export default function GenreDynamic() {
   const { genreId } = useParams();
-  const [albums, setAlbums] = useState<albums[]>();
+  const [albums, setAlbums] = useState<Albums[]>();
 
   useEffect(() => {
     const fetchData = async () => {
