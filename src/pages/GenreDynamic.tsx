@@ -4,20 +4,11 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase';
 import genresData from '@/data/genresData.json';
-
-interface Albums {
-  cover: string;
-  created_at: Date;
-  genre: number;
-  id: number;
-  title: string;
-  artist: string;
-  year: number;
-}
+import { Album } from '@/types/interfaces';
 
 export default function GenreDynamic() {
   const { genreId } = useParams();
-  const [albums, setAlbums] = useState<Albums[]>();
+  const [albums, setAlbums] = useState<Album[]>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,7 +49,7 @@ export default function GenreDynamic() {
 
       <article className='container m-5 mx-auto mb-20 px-10'>
         <div className='flex flex-col items-end'>
-          <h1 className='text-2xl font-bold'>Albums</h1>
+          <h1 className='text-2xl font-bold'>Album</h1>
           <p className='text-gray-600'>Enjoy every last drop of sound</p>
         </div>
 

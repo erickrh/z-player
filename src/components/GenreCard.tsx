@@ -1,10 +1,5 @@
+import { GenreCardProps } from '@/types/interfaces';
 import { Link } from 'react-router-dom';
-
-export interface GenreCardProps {
-  name: string;
-  cover: string;
-  id: number;
-}
 
 export default function GenreCard({ name, cover, id }: GenreCardProps) {
   return (

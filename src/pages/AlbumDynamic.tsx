@@ -2,28 +2,11 @@ import { Link, useParams } from 'react-router-dom';
 import Arrow from '@/assets/arrow.svg?react';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase';
-
-interface Songs {
-  id: number;
-  createdAt: Date;
-  title: string;
-  url: string;
-  album: number;
-}
-
-interface Album {
-  cover: string;
-  created_at: Date;
-  genre: number;
-  id: number;
-  title: string;
-  artist: string;
-  year: number;
-}
+import { Song, Album } from '@/types/interfaces';
 
 export default function AlbumDynamic() {
   const { genreId, albumId } = useParams();
-  const [songs, setSongs] = useState<Songs[]>([]);
+  const [songs, setSongs] = useState<Song[]>([]);
   const [album, setAlbum] = useState<Album>();
   const [hoveredSongId, setHoveredSongId] = useState<number | null>(null);
 
@@ -66,9 +49,13 @@ export default function AlbumDynamic() {
     fetchSongs();
   }, [genreId, albumId]);
 
+  console.log(album?.color);
+
   return (
     <section className='grid grid-cols-3'>
-      <article className='col-span-1 flex h-screen flex-col justify-center bg-red-950'>
+      <article
+        className={`col-span-1 flex h-screen flex-col justify-center bg-[${album?.color ?? '#460809'}]`}
+      >
         <Link to={`/genre/${genreId}`}>
           <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
         </Link>
@@ -77,7 +64,7 @@ export default function AlbumDynamic() {
           <>
             <div className='flex flex-col items-center space-y-5 px-2'>
               <img
-                className='h-72 w-72 rounded-sm'
+                className='h-72 w-72 rounded-sm outline outline-amber-50'
                 src={album?.cover}
                 alt='manson'
               />
