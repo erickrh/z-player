@@ -1,0 +1,8 @@
+/* Music player styles */
+.rhap_container {
+  background-color: inherit !important;
+  box-shadow: none !important;
+}
+.rhap_time {
+  color: aliceblue !important;
+}

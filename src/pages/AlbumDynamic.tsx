@@ -3,6 +3,8 @@ import Arrow from '@/assets/arrow.svg?react';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase';
 import { Song, Album } from '@/types/interfaces';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 export default function AlbumDynamic() {
   const { genreId, albumId } = useParams();
@@ -53,7 +55,8 @@ export default function AlbumDynamic() {
   return (
     <section className='grid grid-cols-3'>
       <article
-        className={`col-span-1 flex h-screen flex-col justify-center bg-[${album?.color ?? '#460809'}] overflow-hidden`}
+        className={`col-span-1 flex h-screen flex-col justify-center overflow-hidden`}
+        style={{ backgroundColor: album?.color ?? '#460809' }}
       >
         <Link to={`/genre/${genreId}`}>
           <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
@@ -78,23 +81,12 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-              <div className='flex items-center justify-center space-x-5'>
-                <button className='group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
-                  <p className='font-inter text-dark-background z-10 mr-1 text-2xl transition-transform duration-100 group-hover:scale-110'>
-                    ◀
-                  </p>
-                </button>
-                <button className='group flex h-20 w-20 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
-                  <p className='font-inter text-dark-background z-10 ml-2 text-5xl transition-transform duration-100 group-hover:scale-110'>
-                    ▶
-                  </p>
-                </button>
-                <button className='group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
-                  <p className='font-inter text-dark-background z-10 ml-1 text-2xl transition-transform duration-100 group-hover:scale-110'>
-                    ▶
-                  </p>
-                </button>
-              </div>
+              {songs[3]?.url && (
+                <AudioPlayer
+                  src={songs[3].url}
+                  onPlay={(e) => console.log('onPlay')}
+                />
+              )}
             </div>
           </>
         )}
@@ -103,6 +95,7 @@ export default function AlbumDynamic() {
       <article className='col-span-2 flex h-screen flex-col items-center justify-center bg-linear-to-r from-[#252a2d] to-black px-1'>
         {songs.map((song) => (
           <button
+            key={song.id}
             onClick={() => console.log(song.title)}
             onMouseEnter={() => setHoveredSongId(song.id)}
             onMouseLeave={() => setHoveredSongId(null)}
