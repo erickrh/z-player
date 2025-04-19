@@ -55,11 +55,11 @@ export default function AlbumDynamic() {
   return (
     <section className='grid grid-cols-3'>
       <article
-        className={`col-span-1 flex h-screen flex-col justify-center overflow-hidden`}
+        className={`col-span-1 flex h-screen flex-col justify-between overflow-hidden`}
         style={{ backgroundColor: album?.color ?? '#460809' }}
       >
         <Link to={`/genre/${genreId}`}>
-          <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
+          <Arrow className='mt-2 h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
         </Link>
 
         {album && (
