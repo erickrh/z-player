@@ -78,11 +78,23 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-              <button className='group flex h-20 w-20 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
-                <p className='font-inter text-dark-background z-10 ml-2 text-4xl transition-transform duration-100 group-hover:scale-110'>
-                  ▶
-                </p>
-              </button>
+              <div className='flex items-center justify-center space-x-5'>
+                <button className='group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
+                  <p className='font-inter text-dark-background z-10 mr-1 text-2xl transition-transform duration-100 group-hover:scale-110'>
+                    ◀
+                  </p>
+                </button>
+                <button className='group flex h-20 w-20 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
+                  <p className='font-inter text-dark-background z-10 ml-2 text-5xl transition-transform duration-100 group-hover:scale-110'>
+                    ▶
+                  </p>
+                </button>
+                <button className='group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
+                  <p className='font-inter text-dark-background z-10 ml-1 text-2xl transition-transform duration-100 group-hover:scale-110'>
+                    ▶
+                  </p>
+                </button>
+              </div>
             </div>
           </>
         )}
