@@ -49,8 +49,6 @@ export default function AlbumDynamic() {
     fetchSongs();
   }, [genreId, albumId]);
 
-  console.log(album?.color);
-
   return (
     <section className='grid grid-cols-3'>
       <article
