@@ -38,7 +38,8 @@ export default function AlbumDynamic() {
         const { data: songs, error } = await supabase
           .from('songs')
           .select('*')
-          .eq('album', albumId);
+          .eq('album', albumId)
+          .order('id', { ascending: true });
         if (error) console.error('Error fetching songs:', error.message);
         else setSongs(songs);
       } catch (err) {
