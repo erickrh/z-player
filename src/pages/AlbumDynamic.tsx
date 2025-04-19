@@ -53,7 +53,7 @@ export default function AlbumDynamic() {
   return (
     <section className='grid grid-cols-3'>
       <article
-        className={`col-span-1 flex h-screen flex-col justify-center bg-[${album?.color ?? '#460809'}]`}
+        className={`col-span-1 flex h-screen flex-col justify-center bg-[${album?.color ?? '#460809'}] overflow-hidden`}
       >
         <Link to={`/genre/${genreId}`}>
           <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
@@ -78,10 +78,8 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-            </div>
-            <div className='mt-5 flex justify-center'>
-              <button className='group flex h-25 w-25 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
-                <p className='font-inter text-dark-background z-10 ml-2 text-5xl transition-transform duration-100 group-hover:scale-110'>
+              <button className='group flex h-20 w-20 cursor-pointer items-center justify-center rounded-full bg-amber-50 transition-transform duration-100 hover:scale-110'>
+                <p className='font-inter text-dark-background z-10 ml-2 text-4xl transition-transform duration-100 group-hover:scale-110'>
                   ▶
                 </p>
               </button>

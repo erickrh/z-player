@@ -49,7 +49,7 @@ export default function GenreDynamic() {
 
       <article className='container m-5 mx-auto mb-20 px-10'>
         <div className='flex flex-col items-end'>
-          <h1 className='text-2xl font-bold'>Album</h1>
+          <h1 className='text-2xl font-bold'>Albums</h1>
           <p className='text-gray-600'>Enjoy every last drop of sound</p>
         </div>
 
