@@ -43,8 +43,12 @@ export default function AlbumDynamic() {
           .select('*')
           .eq('album', albumId)
           .order('id', { ascending: true });
-        if (error) console.error('Error fetching songs:', error.message);
-        else setSongs(songs);
+        if (error) {
+          console.error('Error fetching songs:', error.message);
+        } else {
+          setSongs(songs);
+          // setCurrentSong(songs[0]);
+        }
       } catch (err) {
         console.error('Unexpected error:', err);
       }
@@ -52,6 +56,20 @@ export default function AlbumDynamic() {
 
     fetchSongs();
   }, [genreId, albumId]);
+
+  const playNextSong = () => {
+    if (!currentSong) return;
+    const newSongId = currentSong?.id + 1;
+    const newSong = songs.find((song) => song.id === newSongId);
+    setCurrentSong(newSong ?? songs[0]);
+  };
+
+  const playPreviousSong = () => {
+    if (!currentSong) return;
+    const newSongId = currentSong?.id - 1;
+    const newSong = songs.find((song) => song.id === newSongId);
+    setCurrentSong(newSong ?? songs[songs.length - 1]);
+  };
 
   return (
     <section className='grid grid-cols-3'>
@@ -82,7 +100,15 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-              <AudioPlayer src={currentSong?.url} autoPlayAfterSrcChange />
+              <AudioPlayer
+                src={currentSong?.url}
+                autoPlayAfterSrcChange
+                onEnded={playNextSong}
+                onClickNext={playNextSong}
+                onClickPrevious={playPreviousSong}
+                showSkipControls
+                showJumpControls={false}
+              />
             </div>
           </>
         )}
