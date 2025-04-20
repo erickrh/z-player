@@ -11,6 +11,7 @@ export default function AlbumDynamic() {
   const [songs, setSongs] = useState<Song[]>([]);
   const [album, setAlbum] = useState<Album>();
   const [hoveredSongId, setHoveredSongId] = useState<number | null>(null);
+  const [currentSong, setCurrentSong] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const fetchAlbumData = async () => {
@@ -81,12 +82,7 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-              {songs[3]?.url && (
-                <AudioPlayer
-                  src={songs[3].url}
-                  onPlay={(e) => console.log('onPlay')}
-                />
-              )}
+              <AudioPlayer src={currentSong} autoPlayAfterSrcChange />
             </div>
           </>
         )}
@@ -96,10 +92,10 @@ export default function AlbumDynamic() {
         {songs.map((song) => (
           <button
             key={song.id}
-            onClick={() => console.log(song.title)}
+            onClick={() => setCurrentSong(song.url)}
             onMouseEnter={() => setHoveredSongId(song.id)}
             onMouseLeave={() => setHoveredSongId(null)}
-            className='flex h-20 w-full cursor-pointer items-center justify-between rounded-sm hover:bg-[#252a2d]'
+            className={`flex h-20 w-full cursor-pointer items-center justify-between rounded-sm hover:bg-[#252a2d] ${currentSong === song.url && 'bg-[#252a2d]'}`}
           >
             <div className='flex'>
               <p className='font-inter mx-5 w-2'>
