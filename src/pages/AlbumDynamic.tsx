@@ -74,7 +74,7 @@ export default function AlbumDynamic() {
   return (
     <section className='grid grid-cols-3'>
       <article
-        className={`col-span-1 flex h-screen flex-col justify-between overflow-hidden`}
+        className='col-span-1 flex h-screen flex-col justify-between overflow-hidden'
         style={{ backgroundColor: album?.color ?? '#460809' }}
       >
         <Link to={`/genre/${genreId}`}>
@@ -100,15 +100,19 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-              <AudioPlayer
-                src={currentSong?.url}
-                autoPlayAfterSrcChange
-                onEnded={playNextSong}
-                onClickNext={playNextSong}
-                onClickPrevious={playPreviousSong}
-                showSkipControls
-                showJumpControls={false}
-              />
+              <div
+                className={`w-full transition-opacity duration-1000 ${currentSong ? 'opacity-100' : 'opacity-0'}`}
+              >
+                <AudioPlayer
+                  src={currentSong?.url}
+                  autoPlayAfterSrcChange
+                  onEnded={playNextSong}
+                  onClickNext={playNextSong}
+                  onClickPrevious={playPreviousSong}
+                  showSkipControls
+                  showJumpControls={false}
+                />
+              </div>
             </div>
           </>
         )}
