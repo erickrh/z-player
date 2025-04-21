@@ -100,19 +100,19 @@ export default function AlbumDynamic() {
                 <span className='font-bold'>Year: </span>
                 {album?.year}
               </p>
-              <div
-                className={`w-full transition-opacity duration-1000 ${currentSong ? 'opacity-100' : 'opacity-0'}`}
-              >
-                <AudioPlayer
-                  src={currentSong?.url}
-                  autoPlayAfterSrcChange
-                  onEnded={playNextSong}
-                  onClickNext={playNextSong}
-                  onClickPrevious={playPreviousSong}
-                  showSkipControls
-                  showJumpControls={false}
-                />
-              </div>
+            </div>
+            <div
+              className={`w-full transition-opacity duration-1000 ${currentSong ? 'opacity-100' : 'opacity-0'}`}
+            >
+              <AudioPlayer
+                src={currentSong?.url}
+                autoPlayAfterSrcChange
+                onEnded={playNextSong}
+                onClickNext={playNextSong}
+                onClickPrevious={playPreviousSong}
+                showSkipControls
+                showJumpControls={false}
+              />
             </div>
           </>
         )}
