@@ -102,7 +102,9 @@ export default function AlbumDynamic() {
               </p>
             </div>
             <div
-              className={`w-full transition-opacity duration-1000 ${currentSong ? 'opacity-100' : '-z-10 opacity-0'}`}
+              className={`w-full overflow-hidden transition-all duration-500 ease-in-out ${
+                currentSong ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+              }`}
             >
               <AudioPlayer
                 src={currentSong?.url}
