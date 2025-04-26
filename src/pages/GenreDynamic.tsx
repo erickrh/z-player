@@ -38,13 +38,22 @@ export default function GenreDynamic() {
   return (
     <section>
       {headerImage ? (
-        <img
-          src={headerImage}
-          alt='header'
-          className='h-50 w-screen object-cover object-center shadow-md'
-        />
+        <div className='relative'>
+          <Link to='/'>
+            <Arrow className='absolute top-2 h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
+          </Link>
+          <img
+            src={headerImage}
+            alt='header'
+            className='h-50 w-screen object-cover object-center shadow-md'
+          />
+        </div>
       ) : (
-        <div className='h-50 w-full bg-[#252a2d] shadow-md'></div>
+        <div className='relative h-50 w-full bg-[#252a2d] shadow-md'>
+          <Link to='/'>
+            <Arrow className='absolute top-2 h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
+          </Link>
+        </div>
       )}
 
       <article className='container m-5 mx-auto mb-20 px-10'>
@@ -67,10 +76,6 @@ export default function GenreDynamic() {
           </div>
         )}
       </article>
-
-      <Link to='/' className='fixed top-1/2 left-0 -translate-y-1/2'>
-        <Arrow className='h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
-      </Link>
     </section>
   );
 }
