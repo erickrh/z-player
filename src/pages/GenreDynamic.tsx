@@ -63,7 +63,7 @@ export default function GenreDynamic() {
         </div>
 
         {albums && (
-          <div className='mt-10 flex flex-wrap gap-x-5 gap-y-15'>
+          <div className='flex flex-wrap gap-x-5 gap-y-15'>
             {albums.map((album) => (
               <AlbumCard
                 key={album.id}
