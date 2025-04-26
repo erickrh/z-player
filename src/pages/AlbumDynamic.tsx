@@ -86,7 +86,7 @@ export default function AlbumDynamic() {
             <div className='flex flex-col items-center space-y-5 px-2'>
               <img
                 className='h-72 w-72 rounded-sm outline outline-amber-50'
-                src={album?.cover}
+                src={album?.animate_cover}
                 alt='manson'
               />
               <h2 className='font-inter font-bold capitalize'>

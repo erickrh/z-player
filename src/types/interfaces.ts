@@ -15,6 +15,7 @@ export interface Album {
   artist: string;
   year: number;
   color: string;
+  animate_cover: string;
 }
 
 export interface GenreCardProps {
