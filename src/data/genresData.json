@@ -34,5 +34,23 @@
     "name": "rock",
     "cover": "/genres-cover/rock.webp",
     "header": "/genre-header/rock-banner.png"
+  },
+  {
+    "id": 7,
+    "name": "pop",
+    "cover": "/genres-cover/pop.webp",
+    "header": "/genre-header/pop.webp"
+  },
+  {
+    "id": 8,
+    "name": "EDM",
+    "cover": "/genres-cover/edm_cover.jpg",
+    "header": "/genre-header/edm_header.jpg"
+  },
+  {
+    "id": 9,
+    "name": "hip hop / rap",
+    "cover": "/genres-cover/rap_cover.jpeg",
+    "header": "/genre-header/rap_header.jpeg"
   }
 ]
