@@ -12,6 +12,7 @@ export default function AlbumDynamic() {
   const [album, setAlbum] = useState<Album>();
   const [hoveredSongId, setHoveredSongId] = useState<number | null>(null);
   const [currentSong, setCurrentSong] = useState<Song | undefined>(undefined);
+  const [artistName, setArtistName] = useState<string>('');
 
   useEffect(() => {
     const fetchAlbumData = async () => {
@@ -47,7 +48,6 @@ export default function AlbumDynamic() {
           console.error('Error fetching songs:', error.message);
         } else {
           setSongs(songs);
-          // setCurrentSong(songs[0]);
         }
       } catch (err) {
         console.error('Unexpected error:', err);
@@ -56,6 +56,26 @@ export default function AlbumDynamic() {
 
     fetchSongs();
   }, [genreId, albumId]);
+
+  useEffect(() => {
+    const fetchArtistName = async () => {
+      try {
+        const { data: artistNameData, error } = await supabase
+          .from('artist')
+          .select('name')
+          .eq('uuid', album?.artist)
+          .single();
+        if (error) {
+          console.error('Error fetching songs:', error.message);
+        } else {
+          setArtistName(artistNameData.name);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchArtistName();
+  }, [album?.artist]);
 
   const playNextSong = () => {
     if (!currentSong) return;
@@ -94,7 +114,7 @@ export default function AlbumDynamic() {
               </h2>
               <p className='font-karla capitalize'>
                 <span className='font-bold'>Artist: </span>
-                {album?.artist}
+                {artistName}
               </p>
               <p className='font-karla'>
                 <span className='font-bold'>Year: </span>
