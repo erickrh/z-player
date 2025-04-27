@@ -56,14 +56,14 @@ export default function GenreDynamic() {
         </div>
       )}
 
-      <article className='container m-5 mx-auto mb-20 px-10'>
-        <div className='flex flex-col items-end'>
+      <article className='container m-5 mx-auto mb-20'>
+        <div className='mr-5 flex flex-col items-end sm:mr-0'>
           <h1 className='text-2xl font-bold'>Albums</h1>
           <p className='text-gray-600'>Enjoy every last drop of sound</p>
         </div>
 
         {albums && (
-          <div className='flex flex-wrap gap-x-5 gap-y-15'>
+          <div className='mt-5 flex flex-wrap justify-center gap-x-5 gap-y-15'>
             {albums.map((album) => (
               <AlbumCard
                 key={album.id}

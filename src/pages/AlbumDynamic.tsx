@@ -92,7 +92,7 @@ export default function AlbumDynamic() {
   };
 
   return (
-    <section className='grid grid-cols-3'>
+    <section className='sm:grid sm:grid-cols-3'>
       <article
         className='col-span-1 flex h-screen flex-col justify-between overflow-hidden'
         style={{ backgroundColor: album?.color ?? '#460809' }}

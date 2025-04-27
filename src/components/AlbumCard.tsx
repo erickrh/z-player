@@ -13,7 +13,7 @@ export default function AlbumCard({
 }) {
   return (
     <Link to={`/genre/${genreId}/${albumId}`}>
-      <article className='group relative h-48 w-96 cursor-pointer rounded-sm shadow outline transition-all duration-100 hover:outline-2 hover:outline-red-400'>
+      <article className='group relative h-48 w-[calc(100vw-2px)] cursor-pointer rounded-sm shadow outline transition-all duration-100 hover:outline-2 hover:outline-red-400 sm:w-96'>
         <img
           className='h-full w-full rounded-sm object-cover transition-all duration-100 group-hover:opacity-70'
           src={cover}
