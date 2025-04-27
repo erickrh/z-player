@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "metal",
-    "cover": "/genres-cover/metal.jpg",
-    "header": "/genre-header/metal-banner.jpg"
+    "cover": "/genres-cover/metal.webp",
+    "header": "/genre-header/metal-banner.webp"
   },
   {
     "id": 2,
@@ -14,7 +14,7 @@
   {
     "id": 3,
     "name": "corridos tumbados",
-    "cover": "/genres-cover/corridos-tumbados.jpg",
+    "cover": "/genres-cover/corridos-tumbados.webp",
     "header": "/genre-header/ct-banner.png"
   },
   {
@@ -26,13 +26,13 @@
   {
     "id": 5,
     "name": "reggaeton",
-    "cover": "/genres-cover/reggaeton.jpg",
+    "cover": "/genres-cover/reggaeton.webp",
     "header": "/genre-header/reggaeton-banner.png"
   },
   {
     "id": 6,
     "name": "rock",
-    "cover": "/genres-cover/rock.jpg",
+    "cover": "/genres-cover/rock.webp",
     "header": "/genre-header/rock-banner.png"
   }
 ]
