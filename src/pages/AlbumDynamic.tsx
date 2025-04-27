@@ -117,7 +117,7 @@ export default function AlbumDynamic() {
               </h2>
               <p className='font-karla capitalize'>
                 <span className='font-bold'>Artist: </span>
-                {artistName}
+                {artistName ? artistName : ''}
               </p>
               <p className='font-karla'>
                 <span className='font-bold'>Year: </span>
