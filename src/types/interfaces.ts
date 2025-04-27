@@ -4,6 +4,7 @@ export interface Song {
   title: string;
   url: string;
   album: number;
+  duration: string;
 }
 
 export interface Album {

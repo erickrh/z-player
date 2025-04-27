@@ -155,7 +155,7 @@ export default function AlbumDynamic() {
               </p>
               <p className='font-inter'>{song.title}</p>
             </div>
-            <p className='mr-7'>02:46</p>
+            <p className='mr-7'>{song.duration}</p>
           </button>
         ))}
       </article>
