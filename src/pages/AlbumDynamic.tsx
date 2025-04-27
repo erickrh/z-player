@@ -98,7 +98,7 @@ export default function AlbumDynamic() {
     <section className='sm:grid sm:grid-cols-3'>
       <article
         className='col-span-1 flex h-screen flex-col justify-between overflow-hidden'
-        style={{ backgroundColor: album?.color ?? '#460809' }}
+        style={{ backgroundColor: album?.color ?? '#181a1b' }}
       >
         <Link to={`/genre/${genreId}`}>
           <Arrow className='mt-2 h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
@@ -110,7 +110,7 @@ export default function AlbumDynamic() {
               <img
                 className='h-72 w-72 rounded-sm outline outline-amber-50'
                 src={album?.animate_cover}
-                alt='manson'
+                alt='cover'
               />
               <h2 className='font-inter font-bold capitalize'>
                 {album?.title}
