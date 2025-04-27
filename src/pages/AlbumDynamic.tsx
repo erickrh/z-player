@@ -66,7 +66,7 @@ export default function AlbumDynamic() {
           .eq('uuid', album?.artist)
           .single();
         if (error) {
-          console.error('Error fetching songs:', error.message);
+          console.error('Error fetching artist name:', error.message);
         } else {
           setArtistName(artistNameData.name);
         }
@@ -74,7 +74,10 @@ export default function AlbumDynamic() {
         console.error(err);
       }
     };
-    fetchArtistName();
+
+    if (album?.artist) {
+      fetchArtistName();
+    }
   }, [album?.artist]);
 
   const playNextSong = () => {
