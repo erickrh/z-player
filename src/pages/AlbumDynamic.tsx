@@ -107,10 +107,13 @@ export default function AlbumDynamic() {
         {album && (
           <>
             <div className='flex flex-col items-center space-y-5 px-2'>
-              <img
-                className='h-72 w-72 rounded-sm outline outline-amber-50'
+              <video
+                className='h-72 w-72 rounded-sm object-cover outline outline-amber-50'
                 src={album?.animate_cover}
-                alt='cover'
+                autoPlay
+                loop
+                muted
+                playsInline
               />
               <h2 className='font-inter font-bold capitalize'>
                 {album?.title}
