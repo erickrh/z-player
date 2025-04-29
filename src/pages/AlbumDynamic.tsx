@@ -100,7 +100,7 @@ export default function AlbumDynamic() {
         className='col-span-1 flex h-screen flex-col justify-between overflow-hidden'
         style={{ backgroundColor: album?.color ?? '#181a1b' }}
       >
-        <Link to={`/genre/${genreId}`}>
+        <Link to={`/genre/${genreId}`} className='w-max'>
           <Arrow className='mt-2 h-20 w-20 cursor-pointer fill-red-400 hover:fill-amber-50' />
         </Link>
 
