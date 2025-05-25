@@ -2,6 +2,7 @@
 .rhap_container {
   background-color: inherit !important;
   box-shadow: none !important;
+  padding-bottom: 0 !important;
 }
 .rhap_time {
   color: aliceblue !important;
