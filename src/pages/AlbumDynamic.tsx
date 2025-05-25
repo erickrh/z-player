@@ -95,9 +95,9 @@ export default function AlbumDynamic() {
   };
 
   return (
-    <section className='sm:grid sm:grid-cols-3'>
+    <section className='grid-cols-3 sm:flex sm:justify-end'>
       <article
-        className='col-span-1 flex h-screen flex-col justify-between overflow-hidden'
+        className='col-span-1 flex h-screen flex-col justify-between overflow-hidden sm:fixed sm:top-0 sm:left-0 sm:w-1/3'
         style={{ backgroundColor: album?.color ?? '#181a1b' }}
       >
         <Link to={`/genre/${genreId}`} className='w-max'>
@@ -146,14 +146,14 @@ export default function AlbumDynamic() {
         )}
       </article>
 
-      <article className='col-span-2 flex h-screen flex-col items-center justify-center bg-linear-to-r from-[#252a2d] to-black px-1'>
+      <article className='col-span-2 flex h-full flex-col items-center justify-center overflow-auto bg-linear-to-r from-[#252a2d] to-black px-1 sm:w-2/3'>
         {songs.map((song) => (
           <button
             key={song.id}
             onClick={() => setCurrentSong(song)}
             onMouseEnter={() => setHoveredSongId(song.id)}
             onMouseLeave={() => setHoveredSongId(null)}
-            className={`flex h-20 w-full cursor-pointer items-center justify-between rounded-sm hover:bg-[#252a2d] ${currentSong?.id === song.id && 'bg-[#252a2d]'}`}
+            className={`flex h-14 w-full cursor-pointer items-center justify-between rounded-sm hover:bg-[#252a2d] ${currentSong?.id === song.id && 'bg-[#252a2d]'}`}
           >
             <div className='flex'>
               <p className='font-inter mx-5 w-2'>
