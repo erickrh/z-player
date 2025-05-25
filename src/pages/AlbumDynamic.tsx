@@ -155,11 +155,11 @@ export default function AlbumDynamic() {
             onMouseLeave={() => setHoveredSongId(null)}
             className={`flex h-14 w-full cursor-pointer items-center justify-between rounded-sm hover:bg-[#252a2d] ${currentSong?.id === song.id && 'bg-[#252a2d]'}`}
           >
-            <div className='flex'>
+            <div className='flex overflow-hidden'>
               <p className='font-inter mx-5 w-2'>
                 {hoveredSongId === song.id ? '▶' : song.id}
               </p>
-              <p className='font-inter'>{song.title}</p>
+              <p className='font-inter truncate'>{song.title}</p>
             </div>
             <p className='mr-7'>{song.duration}</p>
           </button>
