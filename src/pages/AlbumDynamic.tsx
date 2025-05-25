@@ -99,7 +99,7 @@ export default function AlbumDynamic() {
   return (
     <section className='grid-cols-3 sm:flex sm:justify-end'>
       <article
-        className='col-span-1 flex flex-col justify-between overflow-hidden py-5 sm:fixed sm:top-0 sm:left-0 sm:h-screen sm:w-1/3'
+        className='col-span-1 flex flex-col justify-between overflow-hidden pt-0 pb-5 sm:fixed sm:top-0 sm:left-0 sm:h-screen sm:w-1/3'
         style={{ backgroundColor: album?.color ?? '#181a1b' }}
       >
         <Link to={`/genre/${genreId}`} className='w-max'>
