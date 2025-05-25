@@ -94,6 +94,8 @@ export default function AlbumDynamic() {
     setCurrentSong(newSong ?? songs[songs.length - 1]);
   };
 
+  const isVideoCover = album?.animate_cover.includes('mp4');
+
   return (
     <section className='grid-cols-3 sm:flex sm:justify-end'>
       <article
@@ -107,14 +109,22 @@ export default function AlbumDynamic() {
         {album && (
           <>
             <div className='flex flex-col items-center space-y-5 px-2'>
-              <video
-                className='h-72 w-72 rounded-sm object-cover outline outline-amber-50'
-                src={album?.animate_cover}
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
+              {isVideoCover ? (
+                <video
+                  className='h-72 w-72 rounded-sm object-cover outline outline-amber-50'
+                  src={album?.animate_cover}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img
+                  className='h-72 w-72 rounded-sm object-cover outline outline-amber-50'
+                  src={album?.animate_cover}
+                />
+              )}
+
               <h2 className='font-inter font-bold capitalize'>
                 {album?.title}
               </h2>
