@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className='-mb-5 flex justify-center'>
+    <header className='mt-3 -mb-5 flex justify-center'>
       <svg
         width='200pt'
         height='120pt'
