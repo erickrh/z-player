@@ -9,7 +9,7 @@
 
 html,
 body {
-  @apply bg-dark-background text-amber-50;
+  @apply bg-linear-to-r from-[#252a2d] to-black text-amber-50;
 }
 
 @font-face {

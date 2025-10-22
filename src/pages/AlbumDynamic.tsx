@@ -156,7 +156,7 @@ export default function AlbumDynamic() {
         )}
       </article>
 
-      <article className='col-span-2 flex h-full flex-col items-center justify-center overflow-auto bg-linear-to-r from-[#252a2d] to-black px-1 sm:w-2/3'>
+      <article className='col-span-2 flex h-full flex-col items-center justify-center overflow-auto px-1 sm:w-2/3'>
         {songs.map((song) => (
           <button
             key={song.id}
