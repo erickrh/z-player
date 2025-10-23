@@ -9,4 +9,4 @@ Note: It is still under construction.
 #### **Screenshots:**
 <img width="1697" height="835" alt="Screenshot from 2025-10-22 19-16-36" src="https://github.com/user-attachments/assets/b48bea87-a9bb-4c3a-bf92-54ad6e8f2f95" />
 
-Thanks for your visit! 🐱
+Thanks for your visit! 🤘🏻
